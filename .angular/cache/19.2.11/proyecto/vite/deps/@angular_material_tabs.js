@@ -1,13 +1,4 @@
 import {
-  MAT_RIPPLE_GLOBAL_OPTIONS,
-  MatRipple
-} from "./chunk-6TPIMEYW.js";
-import {
-  RtlScrollAxisType,
-  getRtlScrollAxisType,
-  supportsScrollBehavior
-} from "./chunk-KQGEXFNM.js";
-import {
   ArrayDataSource,
   CdkPortal,
   CdkPortalOutlet,
@@ -17,8 +8,17 @@ import {
   isDataSource
 } from "./chunk-37MIBYTI.js";
 import {
+  MAT_RIPPLE_GLOBAL_OPTIONS,
+  MatRipple
+} from "./chunk-6TPIMEYW.js";
+import {
   _StructuralStylesLoader
 } from "./chunk-IJUUHIDR.js";
+import {
+  RtlScrollAxisType,
+  getRtlScrollAxisType,
+  supportsScrollBehavior
+} from "./chunk-KQGEXFNM.js";
 import {
   CdkMonitorFocus,
   CdkObserveContent,

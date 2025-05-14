@@ -5,6 +5,17 @@
   overflow: hidden;
 }
 
+@font-face {
+  font-family: 'MiFuente';
+  src: url('/teslaF/TESLA.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#texto {
+  font-family: 'MiFuente', sans-serif;
+}
+
 /* Imagen bien encajada */
 .carousel-image {
   width: 100%;

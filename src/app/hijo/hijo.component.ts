@@ -30,9 +30,9 @@ export class HijoComponent {
       console.log('Meses seleccionados:', mesesNum);  // Verifica que se haya convertido correctamente
   
       // Verificar el número de meses y asignar el porcentaje extra
-      if (mesesNum === 6) porcentajeExtra = 1.2;
-      else if (mesesNum === 12) porcentajeExtra = 1.4;
-      else if (mesesNum === 24) porcentajeExtra = 2;
+      if (mesesNum === 6) porcentajeExtra = 1.05;
+      else if (mesesNum === 12) porcentajeExtra = 1.1;
+      else if (mesesNum === 24) porcentajeExtra = 1.2;
   
       console.log('Porcentaje extra:', porcentajeExtra);
   
