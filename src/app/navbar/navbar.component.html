@@ -1,0 +1,83 @@
+<nav class="bg-zinc-900 text-white p-4 font-montserrat">
+  <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap">
+
+    <!-- LOGO -->
+    <div class="mb-2 md:mb-0">
+      <div class="mt-2 md:mb-0">
+        <img src="img/logo.png" alt="Logo Agencia Semis" class="h-12">
+      </div>
+    </div>
+
+    <!-- ENLACES GENERALES -->
+    <div class="flex flex-wrap items-center gap-4">
+      <a [routerLink]="['/home']" class="font-extrabold transition-all duration-300 text-white no-underline hover:scale-110 text-blue-300">Home</a>
+      <a [routerLink]="['/carros']" class="font-extrabold transition-all duration-300 text-white no-underline hover:scale-110 text-blue-300">Modelos</a>
+      <a [routerLink]="['/about']" class="font-extrabold transition-all duration-300 text-white no-underline hover:scale-110 text-blue-300">About</a>
+      <a [routerLink]="['/otros']" class="font-extrabold transition-all duration-300 text-white no-underline hover:scale-110 text-blue-300">Otros Sitios</a>
+      <a [routerLink]="['/padre']" class="font-extrabold transition-all duration-300 text-white no-underline hover:scale-110 text-blue-300">Financiamiento</a>
+      <a [routerLink]="['/formulario1']" class="font-extrabold transition-all duration-300 text-white no-underline hover:scale-110 text-blue-300">Agendar Visita</a>
+      <a [routerLink]="['/formulario2']" class="font-extrabold transition-all duration-300 text-white no-underline hover:scale-110 text-blue-300">Agendar Servicio</a>
+
+      @if (!estaLogueado) {
+        <a [routerLink]="['/login']" class="font-extrabold transition-all duration-300 text-white no-underline hover:scale-110 text-blue-300">Login</a>
+      }
+
+      @if (estaLogueado) {
+        <!-- Contenedor del menú -->
+        <div class="relative group inline-block text-left">
+          <!-- Área visible siempre -->
+          <div class="text-white font-extrabold px-4 py-2 bg-blue-600 rounded-t hover:bg-blue-700 transition cursor-pointer">
+            Opciones
+          </div>
+
+          <!-- Menú desplegable -->
+          <div class="absolute hidden group-hover:flex flex-col bg-white shadow-2xl rounded-b-lg w-52 z-10 overflow-hidden border border-gray-200">
+            <a [routerLink]="['/cita1']"
+               class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-all text-sm font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 no-underline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3M16 7V3M4 11h16M4 17h16M4 21h16" />
+              </svg>
+              Visitas agendadas
+            </a>
+
+            <a [routerLink]="['/cita2']"
+               class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-all text-sm font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6m-6 4h6a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
+              </svg>
+              Servicios agendados
+            </a>
+
+            <button (click)="cerrarSesion()"
+               class="flex items-center gap-3 w-full text-left px-4 py-3 text-red-600 hover:bg-red-50 hover:text-red-700 transition-all text-sm font-medium bg-transparent border-none cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7" />
+              </svg>
+              Cerrar sesión
+            </button>
+          </div>
+        </div>
+
+        <!-- Bienvenida -->
+        <p class="font-extrabold text-lg md:text-xl lg:text-2xl transition-all duration-500 text-blue-300 no-underline">
+          Bienvenido: {{ usuario }}
+        </p>
+      }
+    </div>
+
+    <!-- BUSCADOR -->
+    <div class="mt-8 md:mt-0">
+      <input
+        type="text"
+        placeholder="Buscar carro..."
+        #buscarTexto
+        (keyup.enter)="buscarUnCarro(buscarTexto.value)"
+        class="p-2 text-black rounded w-48"
+      />
+      <button (click)="buscarUnCarro(buscarTexto.value)" class="ml-2 bg-white text-blue-900 px-3 py-2 rounded hover:bg-blue-100">
+        Buscar
+      </button>
+    </div>
+
+  </div>
+</nav>

@@ -1,0 +1,23 @@
+.container{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a{
+    color:bisque;
+    background-color: black;
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    background-color: bisque;
+    border: 1px solid black;
+}

@@ -1,0 +1,13 @@
+<div class="container">
+@if(indice == -1) {
+    <p style="font-size: 1.2em; color: #ff6b6b; font-weight: bold; text-align: center;">
+        No existen resultados de "{{nombreh}}"
+    </p>
+     <a [routerLink]="['/home']">Regresar</a>
+} @else {
+    <div style="text-align: center; margin-top: 20px;">
+        <app-uncarro [carro]='micarro'></app-uncarro>
+    </div>
+}
+
+</div>

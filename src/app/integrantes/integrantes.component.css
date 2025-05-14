@@ -1,0 +1,33 @@
+<h4 class="furioso">Pinche vieja culera de gina!!!!</h4>
+
+<style>
+.furioso {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 3rem;
+  color: #ff0000;
+  text-shadow: 
+    2px 2px 0 #000, 
+    4px 4px 0 #ffcc00,
+    6px 6px 5px rgba(0, 0, 0, 0.6);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: sacudida 0.2s infinite alternate;
+  background: linear-gradient(to right, #ff0000, #ff6600, #ffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+img{
+  max-height: 270px;
+  min-height: 250px;
+}
+
+@keyframes sacudida {
+  from {
+    transform: rotate(-1deg) scale(1.05);
+  }
+  to {
+    transform: rotate(1deg) scale(1.1);
+  }
+}
+</style>

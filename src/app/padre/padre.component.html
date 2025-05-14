@@ -1,0 +1,158 @@
+
+<div class="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-8 space-y-6 font-montserrat mt-20">
+  <h1 class="text-3xl font-extrabold text-blue-900 text-center tracking-tight">Financiamiento de Carros</h1>
+
+  <!-- Selección de Carro -->
+  <div>
+    <h3 class="text-xl font-semibold text-gray-800 mb-3">Seleccione un Carro:</h3>
+    @for (carro of carros; track carro) {
+  <div class="flex items-center gap-3 mb-3 bg-gray-50 p-3 rounded-lg shadow-sm hover:bg-gray-100 transition">
+    <input 
+      type="radio" 
+      name="carro" 
+      [value]="carro" 
+      (change)="seleccionarCarro(carro)" 
+      [checked]="carroSeleccionado === carro"
+      class="accent-blue-900 w-5 h-5"
+    />
+    <label class="text-gray-700 text-sm md:text-base">
+      {{ carro.marca }} - {{ carro.modelo }} - 
+      <span class="font-semibold text-green-600">${{ carro.precio }}</span>
+    </label>
+  </div>
+}
+
+  </div>
+
+  <!-- Componente hijo -->
+  <app-hijo 
+    [carroSeleccionado]="carroSeleccionado"
+    (financiamientoCalculado)="recibirMonto($event)">
+  </app-hijo>
+
+  <!-- Resultado -->
+  <div *ngIf="monto" class="mt-6 bg-blue-50 border border-blue-300 text-blue-900 px-6 py-4 rounded-lg text-center">
+    <span class="text-lg font-medium">Monto total del financiamiento mensual:</span>
+    <div class="text-2xl font-bold mt-1">${{ monto }}</div>
+  </div>
+</div>
+
+<div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 mt-10 font-montserrat">
+  <h2 class="text-xl font-bold text-center text-green-700 mb-6">Clientes satisfechos</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="flex items-center gap-4 bg-gray-50 p-4 rounded shadow-sm hover:shadow-md transition">
+      <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">ML</div>
+      <div>
+        <p class="font-semibold text-gray-800">María López</p>
+        <p class="text-sm text-gray-600">"Me entregaron el carro en perfectas condiciones."</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-gray-50 p-4 rounded shadow-sm hover:shadow-md transition">
+      <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">JT</div>
+      <div>
+        <p class="font-semibold text-gray-800">Juan Torres</p>
+        <p class="text-sm text-gray-600">"El proceso fue rápido y muy fácil."</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-gray-50 p-4 rounded shadow-sm hover:shadow-md transition">
+      <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">LG</div>
+      <div>
+        <p class="font-semibold text-gray-800">Luis García</p>
+        <p class="text-sm text-gray-600">"Muy contento con mi nuevo auto, 100% recomendado."</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4 bg-gray-50 p-4 rounded shadow-sm hover:shadow-md transition">
+      <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">PD</div>
+      <div>
+        <p class="font-semibold text-gray-800">Paola Díaz</p>
+        <p class="text-sm text-gray-600">"Excelente atención y muchas opciones de financiamiento."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section id="gallery" class="w-full max-w-6xl mx-auto px-4 my-12">
+  <h2 class="text-3xl font-bold text-center mb-8">CONTAMOS CON TODOS ESTOS CARROS</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols- gap-4">
+
+    <img
+      src="galeria/galeria-1.webp"
+      alt="Imagen 1"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-2.jpg"
+      alt="Imagen 10"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-3.jpg"
+      alt="Imagen 2"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-4.jpeg"
+      alt="Imagen 6"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-14.jpg"
+      alt="Imagen 4"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-13.jpg"
+      alt="Imagen 5"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-3.jpg"
+      alt="Imagen 3"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-11.jpg"
+      alt="Imagen 10"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-9.jpg"
+      alt="Imagen 8"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-10.jpg"
+      alt="Imagen 9"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    
+    <img
+      src="galeria/galeria-16.jpg"
+      alt="Imagen 10"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+    <img
+      src="galeria/galeria-12.jpg"
+      alt="Imagen 11"
+      class="w-full h-auto rounded-lg object-cover transition-transform duration-300 transform hover:scale-110"
+      data-aos="fade-up"
+    />
+  </div>
+</section>

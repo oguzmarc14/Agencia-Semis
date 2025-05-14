@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2 class="mb-3 text-center">Registros para servicios en agencia</h2>
+
+  @if (citas.length === 0) {
+    <div class="alert alert-info text-center">
+      No hay citas registradas.
+    </div>
+  }
+
+  @if (citas.length > 0) {
+    @for (cita of citas; track cita; let i = $index) {
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Cita #{{ i + 1 }}</h5>
+          <p><strong>Nombre:</strong> {{ cita.nombre }}</p>
+          <p><strong>Correo:</strong> {{ cita.correo }}</p>
+          <p><strong>Teléfono:</strong> {{ cita.telefono }}</p>
+          <p><strong>Servicio:</strong> {{ cita.modelo }}</p>
+          <p><strong>Lavado:</strong> {{ cita.lavado ? 'Sí' : 'No' }}</p>
+          <p><strong>Fecha:</strong> {{ cita.fecha }}</p>
+
+          <!-- Botones de acción -->
+          <div class="d-flex justify-content-end gap-2 mt-3">
+            <button class="btn btn-sm btn-warning" (click)="editarCita(i)">Editar</button>
+            <button class="btn btn-sm btn-danger" (click)="borrarCita(i)">Borrar</button>
+          </div>
+        </div>
+      </div>
+    }
+  }
+</div>

@@ -1,0 +1,24 @@
+<div class="bg-gray-50 p-6 rounded-xl shadow-md space-y-5">
+  <h3 class="text-xl font-semibold text-blue-800 text-center">Opciones de Financiamiento</h3>
+
+  <label class="flex items-center gap-3 text-gray-700 text-base">
+    <input type="radio" name="meses" value="6" [(ngModel)]="meses" class="accent-blue-800 w-5 h-5">
+    <span>6 meses <span class="text-sm text-gray-500 font-medium">(+5%)</span></span>
+  </label>
+
+  <label class="flex items-center gap-3 text-gray-700 text-base">
+    <input type="radio" name="meses" value="12" [(ngModel)]="meses" class="accent-blue-800 w-5 h-5">
+    <span>12 meses <span class="text-sm text-gray-500 font-medium">(+10%)</span></span>
+  </label>
+
+  <label class="flex items-center gap-3 text-gray-700 text-base">
+    <input type="radio" name="meses" value="24" [(ngModel)]="meses" class="accent-blue-800 w-5 h-5">
+    <span>24 meses <span class="text-sm text-gray-500 font-medium">(+20%)</span></span>
+  </label>
+
+  <button 
+    (click)="calcularFinanciamiento()" 
+    class="w-full bg-blue-700 text-white py-2 rounded-lg font-bold hover:bg-blue-800 transition duration-200 shadow-sm">
+    Calcular Financiamiento
+  </button>
+</div>

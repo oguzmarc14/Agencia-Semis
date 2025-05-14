@@ -1,0 +1,54 @@
+<!-- Aplicar fondo gris a toda la página -->
+<body class="bg-gray-100">
+  <div class="bg-zinc-600 text-white py-3 shadow-sm">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <span class="text-4xl text-center w-full tesla-font">AGENCIA SEMIAUTOS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-10 bg-gray-100">
+  <div class="row">
+    @for (h of misCarros; track h; let i = $index) {
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 border-0 shadow-lg rounded-3 overflow-hidden">
+          <img [src]="h.img" class="card-img-top" [alt]="h.modelo" style="height: 200px; object-fit: cover;">
+          <div class="card-body d-flex flex-column bg-white">
+            <h5 class="card-title text-dark fw-semibold mb-2">{{ h.modelo }}</h5>
+            <p class="card-text text-muted small mb-3">{{ h.bio }}</p>
+            <div class="mt-auto text-center">
+              <button [routerLink]="['/carro', i]" class="btn btn-outline-primary px-4 py-2 rounded-pill">
+                Ver más
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+
+<!-- Sección de Recomendaciones con la imagen del auto -->
+<section class="bg-gray-100 py-12 px-6">
+  <div class="max-w-6xl mx-auto text-center bg-gray-100">
+    <h2 class="text-4xl font-bold mb-6 text-gray-800">Lo que opinan nuestros clientes sobre los autos</h2>
+    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+      Nuestros clientes no solo confían en nosotros por el servicio, sino por los autos que encuentran en nuestra agencia. ¡Descubre lo que dicen sobre los vehículos que vieron y adquirieron!
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for (t of testimonios; track t) {
+        <div class="bg-gray-100 p-6 rounded-lg shadow hover:shadow-xl transition-shadow duration-300">
+          <img [src]="t.imagenCliente" [alt]="t.altCliente" class="w-16 h-16 mx-auto rounded-full mb-4">
+          <h4 class="text-lg font-semibold mb-2">{{ t.cliente }}</h4>
+          <p class="text-gray-600 text-sm mb-4">{{ t.comentario1 }}</p>
+          <img [src]="t.imagenAuto" [alt]="t.altAuto" class="w-full h-64 object-cover rounded-md mb-4">
+          <p class="text-gray-600 text-sm">{{ t.comentario2 }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

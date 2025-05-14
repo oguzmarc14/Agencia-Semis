@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Registros para cliente inicial</h2>
+
+  @if (citas.length > 0) {
+    @for (cita of citas; track cita; let i = $index) {
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Cita #{{ i + 1 }}</h5>
+          <p><strong>Nombre:</strong> {{ cita.nombre }}</p>
+          <p><strong>Teléfono:</strong> {{ cita.telefono }}</p>
+          <p><strong>Modelo:</strong> {{ cita.modelo }}</p>
+          <p><strong>Promoción:</strong> {{ cita.promocion ? 'Sí' : 'No' }}</p>
+          <p><strong>Tipo de cita:</strong> {{ cita.tipoCita }}</p>
+          <p><strong>Fecha:</strong> {{ cita.fecha }}</p>
+
+          <div class="d-flex justify-content-end gap-2 mt-3">
+            <button class="btn btn-sm btn-warning" (click)="editarCita(i)">Editar</button>
+            <button class="btn btn-sm btn-danger" (click)="borrarCita(i)">Borrar</button>
+          </div>
+        </div>
+      </div>
+    }
+  } @else {
+    <div class="alert alert-info text-center">
+      No hay ninguna cita registrada.
+    </div>
+  }
+</div>

@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'TeslaFont';
+  src: url('/img/TESLA.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.tesla-font {
+  font-family: 'TeslaFont', sans-serif;
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Autos Disponibles</h2>
+
+  <input type="text" [(ngModel)]="filtroMarca" placeholder="Buscar por marca" class="form-control mb-4" />
+
+  <div class="row" id="auto-list">
+    @for (auto of autosFiltrados; track auto.modelo) {
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img [src]="auto.img" alt="{{ auto.marca }} {{ auto.modelo }}" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">{{ auto.marca }} {{ auto.modelo }}</h5>
+            <p class="card-text">
+              <strong>Año:</strong> {{ auto.anio }} <br />
+              <strong>Precio:</strong> ${{ auto.precio_usd }} USD <br />
+              <strong>Tipo:</strong> {{ auto.tipo }} <br />
+              <span [ngStyle]="{ 'color': auto.disponible ? 'green' : 'red' }">
+                {{ auto.disponible ? 'Disponible' : 'No disponible' }}
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  @if(autosFiltrados.length == 0){
+    <p>no hay</p>
+  }
+
+ 
+</div>
